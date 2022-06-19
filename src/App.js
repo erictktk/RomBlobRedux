@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import Entity from "./features/entities/Entity";
+import {
+  EntityViz,
+  EntityVizAlone
+} from "./features/entities/entityComponentViz";
+import { EntitiesPage } from "./features/entities/entitiesPage";
+import { HeaderViz } from "./features/header/headerViz";
+import { ChangeView } from "./features/changes/newChangeView";
+import { JSONOutputViz } from "./features/jsonOutput/jsonOutputViz";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Navbar } from "./app/navbar";
+import { debounce } from "debounce";
+import { store } from "./app/store";
+import { saveState } from "./app/localStorage";
 
-function App() {
+store.subscribe(
+  debounce(() => {
+    saveState(store.getState());
+    console.log("state saved!");
+  }, 500)
+);
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <div className="App">
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <>
+                <EntitiesPage />
+              </>
+            )}
+          />
+          <Route path="/Header">
+            <HeaderViz />
+          </Route>
+          <Route path="/Changes">
+            <ChangeView />
+          </Route>
+          <Route path="/JSONOutput">
+            <JSONOutputViz />
+          </Route>
+          <Route path="/Patcher">
+            <h1>Not yet implemented</h1>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
-
-export default App;

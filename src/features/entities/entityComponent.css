@@ -1,0 +1,127 @@
+.entity-Bottom-Row {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.entities-View {
+  margin-left: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.entity-Component-Container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.entity-Component-Header,
+.entity-Component-Header2 {
+  background-color: rgb(81, 187, 253);
+  color: white;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 10px;
+
+  border-radius: 5px 2px 0px 0px;
+}
+
+.entity-Component-Header2 {
+  background-color: rgb(54, 153, 214);
+}
+
+.entity-Component-Body {
+  padding: 6px;
+  background-color: beige;
+}
+
+.entity-Component-Body-Inside {
+  padding: 0px;
+}
+
+.entity-Component-Info1 {
+  background-color: beige;
+  justify-content: space-evenly;
+  display: flex;
+  justify-content: left;
+}
+.entity-Component-Info2 {
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+}
+
+.entity-Component-InfoEntry {
+  display: flex;
+  justify-content: left;
+}
+
+.entity-Component-Name-Field {
+  padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: transparent;
+  border: 0px solid;
+  outline: none;
+  color: White;
+  font-family: sans-serif;
+  font-style: bold;
+  font-size: 16px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.entity-Component-Field {
+  padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  border: 0px solid;
+  outline: none;
+  color: White;
+  font-family: sans-serif;
+  font-style: bold;
+  font-size: 18px;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.entity-Component-Field2 {
+  font-size: 12px;
+  padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.entity-Component-Label {
+  font-weight: 600;
+  /*background-color: lightgoldenrodyellow;*/
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.entity-Component-Label2 {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.entity-Component-DropdownLink {
+  font-style: bold;
+  user-select: none;
+  cursor: pointer;
+}
